@@ -1,0 +1,57 @@
+
+정수 num과 n이 매개 변수로 주어질 때, num이 n의 배수이면 1을 return n의 배수가 아니라면 0을 return하도록 solution 함수를 완성해주세요.
+
+제한사항
+2 ≤ num ≤ 100
+2 ≤ n ≤ 9
+
+=======================================================================================
+내 풀이
+
+func solution(_ num:Int, _ n:Int) -> Int {
+    num % n == 0 ? 1 : 0 
+}
+
+
+=======================================================================================
+1.
+func solution(_ num:Int, _ n:Int) -> Int {
+    guard 2...100 ~= num, 2...9 ~= n else { return -1 }
+
+    return num%n == 0 ? 1 : 0
+}
+
+
+2. 내장된 함수를 사용하면 코드 유지보수 및 디버깅이 더 쉬워질 수 있습니다. 
+func solution(_ num:Int, _ n:Int) -> Int {
+    return num.isMultiple(of: n) ? 1 : 0
+}
+
+3. 
+func solution(_ num:Int, _ n:Int) -> Int {
+    let dra = num % n
+    let answer :Int = dra == 0 ? 1 : 0
+    return answer
+}
+
+
+4.
+ 
+import Foundation
+
+func solution(_ num:Int, _ n:Int) -> Int {
+
+    var returnInt:Int = 0
+
+    if 0 == num % n {
+        returnInt = 1
+    }
+
+    return returnInt
+}
+
+
+5.
+func solution(_ num:Int, _ n:Int) -> Int {
+    return num % n == .zero ? 1 : 0
+}
